@@ -1,0 +1,1844 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Donate | Guru Ved Vashisht Charitable Trust</title>
+
+  <!-- Bootstrap 5 -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+
+  <!-- Bootstrap Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  >
+
+  <style>
+
+    :root {
+      --primary: #0d47a1;
+      --primary-dark: #08306b;
+      --accent: #f97316;
+      --accent-dark: #ea580c;
+      --dark: #0f172a;
+      --muted: #64748b;
+      --light-bg: #f8fafc;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #1e293b;
+      background: #f8fafc;
+    }
+
+    .font-display {
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+
+    /* =====================================================
+       NAVBAR
+    ===================================================== */
+
+    .main-navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1050;
+
+      padding: 14px 0;
+
+      background: rgba(255, 255, 255, 0.90);
+
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+
+      transition: all 0.3s ease;
+    }
+
+    .main-navbar.scrolled {
+      padding: 7px 0;
+
+      background: rgba(255, 255, 255, 0.97);
+
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.10);
+    }
+
+    .navbar-brand-custom {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      text-decoration: none;
+      color: #212529;
+    }
+
+    .logo-wrapper {
+      width: 64px;
+      height: 64px;
+      margin-top: -8px;
+
+      transition: transform 0.3s ease;
+    }
+
+    .logo-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .navbar-brand-custom:hover .logo-wrapper {
+      transform: scale(1.08);
+    }
+
+    .brand-name {
+      font-family: Georgia, "Times New Roman", serif;
+
+      font-size: 1.4rem;
+      line-height: 1.1;
+
+      font-weight: 700;
+
+      display: block;
+    }
+
+    .brand-subtitle {
+      display: block;
+
+      font-size: 0.65rem;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+
+      color: #64748b;
+
+      font-weight: 500;
+
+      margin-top: 3px;
+    }
+
+    .desktop-nav {
+      display: flex;
+      align-items: center;
+
+      gap: 28px;
+    }
+
+    .nav-link-custom {
+      position: relative;
+
+      padding: 6px 0;
+
+      color: #64748b;
+
+      font-size: 0.9rem;
+
+      font-weight: 500;
+
+      text-decoration: none;
+
+      transition: color 0.3s ease;
+    }
+
+    .nav-link-custom:hover,
+    .nav-link-custom.active {
+      color: var(--primary);
+    }
+
+    .nav-link-custom.active {
+      font-weight: 700;
+    }
+
+    .nav-link-custom.active::after {
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+      bottom: -2px;
+
+      width: 100%;
+      height: 2px;
+
+      border-radius: 10px;
+
+      background: var(--primary);
+    }
+
+    .donate-nav-btn {
+      background: var(--accent);
+
+      color: white;
+
+      border: 0;
+
+      border-radius: 50px;
+
+      padding: 9px 22px;
+
+      font-weight: 600;
+
+      text-decoration: none;
+
+      box-shadow:
+        0 8px 20px rgba(249, 115, 22, 0.20);
+
+      transition: all 0.3s ease;
+    }
+
+    .donate-nav-btn:hover {
+      background: var(--accent-dark);
+
+      color: white;
+
+      transform: translateY(-1px);
+    }
+
+    .mobile-menu {
+      background: white;
+
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.10);
+    }
+
+    .mobile-nav-link {
+      display: block;
+
+      padding: 12px;
+
+      color: #212529;
+
+      border-radius: 7px;
+
+      text-decoration: none;
+
+      font-size: 1rem;
+
+      font-weight: 500;
+    }
+
+    .mobile-nav-link:hover,
+    .mobile-nav-link.active {
+      background: #f1f5f9;
+
+      color: var(--primary);
+    }
+
+    .mobile-donate {
+      display: block;
+
+      width: 100%;
+
+      text-align: center;
+
+      background: var(--accent);
+
+      color: white;
+
+      padding: 12px;
+
+      border-radius: 7px;
+
+      text-decoration: none;
+
+      font-weight: 600;
+    }
+
+    .mobile-donate:hover {
+      background: var(--accent-dark);
+
+      color: white;
+    }
+
+
+    /* =====================================================
+       DONATION HERO
+    ===================================================== */
+
+    .donate-hero {
+      position: relative;
+
+      background:
+        linear-gradient(
+          135deg,
+          #0f172a 0%,
+          #0d47a1 100%
+        );
+
+      color: white;
+
+      padding: 160px 0 130px;
+
+      text-align: center;
+
+      overflow: hidden;
+    }
+
+    .donate-hero::before {
+      content: "";
+
+      position: absolute;
+
+      width: 450px;
+      height: 450px;
+
+      top: -250px;
+      right: -100px;
+
+      background: rgba(255,255,255,0.05);
+
+      border-radius: 50%;
+    }
+
+    .donate-hero::after {
+      content: "";
+
+      position: absolute;
+
+      width: 350px;
+      height: 350px;
+
+      bottom: -250px;
+      left: -100px;
+
+      background: rgba(249,115,22,0.08);
+
+      border-radius: 50%;
+    }
+
+    .hero-content {
+      position: relative;
+
+      z-index: 2;
+    }
+
+    .hero-heart {
+      color: var(--accent);
+
+      font-size: 4.5rem;
+
+      display: inline-block;
+
+      margin-bottom: 20px;
+
+      animation: pulseHeart 1.8s infinite;
+    }
+
+    @keyframes pulseHeart {
+
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.10);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+
+    }
+
+    .donate-hero h1 {
+      font-family: Georgia, "Times New Roman", serif;
+
+      font-size: clamp(2.5rem, 5vw, 4.2rem);
+
+      font-weight: 700;
+
+      margin-bottom: 20px;
+    }
+
+    .donate-hero p {
+      color: #e2e8f0;
+
+      font-size: 1.2rem;
+
+      max-width: 650px;
+
+      margin: auto;
+
+      line-height: 1.7;
+    }
+
+
+    /* =====================================================
+       DONATION SECTION
+    ===================================================== */
+
+    .donation-section {
+      padding: 90px 0 110px;
+
+      margin-top: -60px;
+
+      position: relative;
+
+      z-index: 5;
+    }
+
+
+    /* =====================================================
+       BANK CARD
+    ===================================================== */
+
+    .donation-card {
+      background: white;
+
+      border-radius: 28px;
+
+      padding: 35px;
+
+      border: 1px solid rgba(0,0,0,0.07);
+
+      box-shadow:
+        0 25px 60px rgba(15,23,42,0.12);
+    }
+
+    .section-heading {
+      font-family: Georgia, "Times New Roman", serif;
+
+      font-size: 2rem;
+
+      font-weight: 700;
+
+      color: #1e293b;
+    }
+
+    .heading-icon {
+      color: var(--primary);
+
+      font-size: 1.7rem;
+    }
+
+    .bank-details {
+      background: #f8fafc;
+
+      border: 1px solid #e2e8f0;
+
+      border-radius: 14px;
+
+      padding: 25px;
+
+      margin-top: 25px;
+    }
+
+    .bank-details h3 {
+      color: var(--primary);
+
+      font-size: 1.2rem;
+
+      font-weight: 700;
+
+      margin-bottom: 20px;
+    }
+
+    .bank-row {
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: flex-start;
+
+      gap: 20px;
+
+      padding: 12px 0;
+
+      border-bottom: 1px solid #e2e8f0;
+
+      font-size: 0.95rem;
+    }
+
+    .bank-row:last-child {
+      border-bottom: 0;
+
+      padding-bottom: 0;
+    }
+
+    .bank-label {
+      color: #64748b;
+
+      flex-shrink: 0;
+    }
+
+    .bank-value {
+      color: #1e293b;
+
+      font-weight: 600;
+
+      text-align: right;
+
+      word-break: break-word;
+    }
+
+    .account-number,
+    .ifsc {
+      font-family: "Courier New", monospace;
+
+      letter-spacing: 0.5px;
+    }
+
+
+    /* =====================================================
+       TAX BADGE
+    ===================================================== */
+
+    .tax-badge {
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 7px;
+
+      background: #dcfce7;
+
+      color: #15803d;
+
+      padding: 8px 15px;
+
+      border-radius: 50px;
+
+      font-size: 0.75rem;
+
+      font-weight: 700;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.7px;
+    }
+
+
+    /* =====================================================
+       TRANSFER BUTTON
+    ===================================================== */
+
+    .transfer-btn {
+      width: 100%;
+
+      height: 52px;
+
+      margin-top: 25px;
+
+      border: 0;
+
+      border-radius: 12px;
+
+      background: var(--primary);
+
+      color: white;
+
+      font-size: 1rem;
+
+      font-weight: 700;
+
+      transition: all 0.3s ease;
+    }
+
+    .transfer-btn:hover {
+      background: #1565c0;
+
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 10px 25px rgba(13,71,161,0.20);
+    }
+
+
+    /* =====================================================
+       IMPACT SECTION
+    ===================================================== */
+
+    .impact-section {
+      padding-top: 10px;
+    }
+
+    .impact-heading {
+      font-family: Georgia, "Times New Roman", serif;
+
+      font-size: 2.2rem;
+
+      font-weight: 700;
+
+      margin-bottom: 30px;
+
+      color: #1e293b;
+    }
+
+    .impact-card {
+      display: flex;
+
+      align-items: center;
+
+      gap: 18px;
+
+      background: white;
+
+      border: 1px solid #e2e8f0;
+
+      border-radius: 14px;
+
+      padding: 16px;
+
+      margin-bottom: 18px;
+
+      box-shadow:
+        0 4px 15px rgba(15,23,42,0.04);
+
+      transition: all 0.3s ease;
+    }
+
+    .impact-card:hover {
+      transform: translateY(-3px);
+
+      box-shadow:
+        0 12px 25px rgba(15,23,42,0.08);
+    }
+
+    .impact-amount {
+      width: 68px;
+      height: 68px;
+
+      flex-shrink: 0;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      background: rgba(249,115,22,0.10);
+
+      border-radius: 50%;
+
+      color: var(--accent);
+
+      font-size: 1rem;
+
+      font-weight: 700;
+
+      text-align: center;
+    }
+
+    .impact-text {
+      color: #475569;
+
+      font-size: 0.95rem;
+
+      font-weight: 600;
+
+      line-height: 1.5;
+
+      margin: 0;
+    }
+
+
+    /* =====================================================
+       SECURITY BOX
+    ===================================================== */
+
+    .security-box {
+      display: flex;
+
+      align-items: flex-start;
+
+      gap: 18px;
+
+      margin-top: 30px;
+
+      padding: 22px;
+
+      background: #eff6ff;
+
+      border-radius: 18px;
+    }
+
+    .security-icon {
+      color: var(--primary);
+
+      font-size: 2rem;
+
+      flex-shrink: 0;
+    }
+
+    .security-box h4 {
+      color: var(--primary);
+
+      font-size: 1.05rem;
+
+      font-weight: 700;
+
+      margin-bottom: 6px;
+    }
+
+    .security-box p {
+      color: #475569;
+
+      font-size: 0.88rem;
+
+      line-height: 1.6;
+
+      margin: 0;
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    .site-footer {
+      background: var(--dark);
+
+      color: #e2e8f0;
+
+      padding-top: 70px;
+
+      padding-bottom: 30px;
+    }
+
+    .footer-brand {
+      display: flex;
+
+      align-items: center;
+
+      gap: 12px;
+
+      margin-bottom: 20px;
+    }
+
+    .footer-logo {
+      width: 65px;
+      height: 65px;
+
+      padding: 8px;
+
+      border-radius: 10px;
+
+      background: rgba(255,255,255,0.10);
+    }
+
+    .footer-logo img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: contain;
+    }
+
+    .footer-brand-name {
+      font-family: Georgia, "Times New Roman", serif;
+
+      font-size: 1.5rem;
+
+      font-weight: 700;
+
+      color: white;
+    }
+
+    .footer-description {
+      color: #94a3b8;
+
+      font-size: 0.9rem;
+
+      line-height: 1.7;
+    }
+
+    .footer-title {
+      font-family: Georgia, "Times New Roman", serif;
+
+      font-size: 1.15rem;
+
+      font-weight: 700;
+
+      color: white;
+
+      margin-bottom: 24px;
+    }
+
+    .footer-links {
+      list-style: none;
+
+      padding: 0;
+
+      margin: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      display: flex;
+
+      align-items: center;
+
+      gap: 10px;
+
+      color: #94a3b8;
+
+      text-decoration: none;
+
+      font-size: 0.9rem;
+
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    .footer-dot {
+      width: 6px;
+      height: 6px;
+
+      border-radius: 50%;
+
+      background: #475569;
+
+      transition: background 0.3s;
+    }
+
+    .footer-links a:hover .footer-dot {
+      background: var(--accent);
+    }
+
+    .contact-list {
+      list-style: none;
+
+      padding: 0;
+
+      margin: 0;
+    }
+
+    .contact-list li {
+      display: flex;
+
+      align-items: flex-start;
+
+      gap: 12px;
+
+      margin-bottom: 18px;
+
+      color: #94a3b8;
+
+      font-size: 0.9rem;
+
+      line-height: 1.6;
+    }
+
+    .contact-list i {
+      color: #60a5fa;
+
+      font-size: 1.15rem;
+
+      flex-shrink: 0;
+    }
+
+    .newsletter-text {
+      color: #94a3b8;
+
+      font-size: 0.9rem;
+
+      margin-bottom: 16px;
+    }
+
+    .newsletter-form {
+      display: flex;
+
+      gap: 8px;
+    }
+
+    .newsletter-input {
+      min-width: 0;
+
+      flex: 1;
+
+      background: rgba(255,255,255,0.05);
+
+      border: 1px solid rgba(255,255,255,0.10);
+
+      color: white;
+
+      border-radius: 8px;
+
+      padding: 10px 14px;
+
+      outline: none;
+    }
+
+    .newsletter-input::placeholder {
+      color: #64748b;
+    }
+
+    .newsletter-input:focus {
+      border-color: #3b82f6;
+    }
+
+    .newsletter-button {
+      background: var(--primary);
+
+      color: white;
+
+      border: 0;
+
+      border-radius: 8px;
+
+      padding: 10px 18px;
+
+      font-weight: 600;
+    }
+
+    .newsletter-button:hover {
+      background: #1565c0;
+    }
+
+    .social-links {
+      display: flex;
+
+      gap: 12px;
+
+      margin-top: 30px;
+    }
+
+    .social-link {
+      width: 40px;
+      height: 40px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      background: rgba(255,255,255,0.05);
+
+      color: white;
+
+      border-radius: 50%;
+
+      text-decoration: none;
+
+      transition: all 0.3s ease;
+    }
+
+    .social-link:hover {
+      background: rgba(255,255,255,0.20);
+
+      color: white;
+
+      transform: translateY(-2px);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.10);
+
+      padding-top: 28px;
+
+      margin-top: 50px;
+
+      text-align: center;
+
+      color: #64748b;
+
+      font-size: 0.85rem;
+    }
+
+
+    /* =====================================================
+       RESPONSIVE
+    ===================================================== */
+
+    @media (max-width: 767.98px) {
+
+      .logo-wrapper {
+        width: 52px;
+        height: 52px;
+        margin-top: -5px;
+      }
+
+      .brand-name {
+        font-size: 1.05rem;
+      }
+
+      .brand-subtitle {
+        font-size: 0.55rem;
+      }
+
+      .donate-hero {
+        padding: 140px 0 110px;
+      }
+
+      .donate-hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .donate-hero p {
+        font-size: 1rem;
+      }
+
+      .donation-section {
+        padding: 60px 15px 80px;
+
+        margin-top: -45px;
+      }
+
+      .donation-card {
+        padding: 25px 20px;
+
+        border-radius: 20px;
+      }
+
+      .bank-details {
+        padding: 18px;
+      }
+
+      .bank-row {
+        flex-direction: column;
+
+        gap: 5px;
+      }
+
+      .bank-value {
+        text-align: left;
+      }
+
+      .impact-section {
+        padding-top: 30px;
+      }
+
+      .impact-heading {
+        font-size: 1.9rem;
+      }
+
+      .impact-card {
+        align-items: flex-start;
+      }
+
+      .impact-amount {
+        width: 62px;
+        height: 62px;
+        font-size: 0.9rem;
+      }
+
+      .newsletter-form {
+        flex-direction: column;
+      }
+
+      .newsletter-button {
+        width: 100%;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+====================================================== -->
+
+<header>
+
+  <nav
+    id="mainNavbar"
+    class="main-navbar"
+  >
+
+    <div class="container">
+
+      <div class="d-flex align-items-center justify-content-between">
+
+
+        <!-- Logo -->
+
+        <a
+          href="index.html"
+          class="navbar-brand-custom"
+        >
+
+          <div class="logo-wrapper">
+
+            <img
+              src="./assets/images/logo.png"
+              alt="Guru Ved Vashisht Charitable Trust Logo"
+            >
+
+          </div>
+
+          <div>
+
+            <span class="brand-name">
+              Guru Ved Vashisht
+            </span>
+
+            <span class="brand-subtitle">
+              Charitable Trust
+            </span>
+
+          </div>
+
+        </a>
+
+
+        <!-- Desktop Navigation -->
+
+        <div class="desktop-nav d-none d-md-flex">
+
+          <a
+            href="index.html"
+            class="nav-link-custom"
+          >
+            मुख्य पृष्ठ (Home)
+          </a>
+
+          <a
+            href="about.html"
+            class="nav-link-custom"
+          >
+            हमारे बारे में (About)
+          </a>
+
+          <a
+            href="programs.html"
+            class="nav-link-custom"
+          >
+            कार्यक्रम (Programs)
+          </a>
+
+          <a
+            href="gallery.html"
+            class="nav-link-custom"
+          >
+            गैलरी (Gallery)
+          </a>
+
+          <a
+            href="contact.html"
+            class="nav-link-custom"
+          >
+            संपर्क (Contact)
+          </a>
+
+          <a
+            href="donate.html"
+            class="donate-nav-btn"
+          >
+            दान करें (Donate Now)
+          </a>
+
+        </div>
+
+
+        <!-- Mobile Toggle -->
+
+        <button
+          class="navbar-toggler d-md-none border-0 shadow-none"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mobileMenu"
+          aria-controls="mobileMenu"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+
+          <i class="bi bi-list fs-2"></i>
+
+        </button>
+
+      </div>
+
+
+      <!-- Mobile Menu -->
+
+      <div
+        class="collapse d-md-none mobile-menu mt-2"
+        id="mobileMenu"
+      >
+
+        <div class="p-4">
+
+          <a
+            href="index.html"
+            class="mobile-nav-link"
+          >
+            मुख्य पृष्ठ (Home)
+          </a>
+
+          <a
+            href="about.html"
+            class="mobile-nav-link"
+          >
+            हमारे बारे में (About)
+          </a>
+
+          <a
+            href="programs.html"
+            class="mobile-nav-link"
+          >
+            कार्यक्रम (Programs)
+          </a>
+
+          <a
+            href="gallery.html"
+            class="mobile-nav-link"
+          >
+            गैलरी (Gallery)
+          </a>
+
+          <a
+            href="contact.html"
+            class="mobile-nav-link"
+          >
+            संपर्क (Contact)
+          </a>
+
+          <a
+            href="donate.html"
+            class="mobile-nav-link active"
+          >
+            दान करें (Donate)
+          </a>
+
+          <a
+            href="donate.html"
+            class="mobile-donate mt-3"
+          >
+            दान करें (Donate Now)
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+====================================================== -->
+
+<section class="donate-hero">
+
+  <div class="container hero-content">
+
+    <i class="bi bi-heart-fill hero-heart"></i>
+
+    <h1>
+      दान करें (Support Our Cause)
+    </h1>
+
+    <p>
+      आपकी उदारता जीवन बदल सकती है।
+      (Your generosity can change lives).
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     DONATION CONTENT
+====================================================== -->
+
+<section class="donation-section">
+
+  <div class="container">
+
+    <div class="row g-5">
+
+
+      <!-- =================================================
+           DONATION OPTIONS
+      ================================================== -->
+
+      <div class="col-lg-6">
+
+        <div class="donation-card">
+
+          <h2
+            class="section-heading d-flex align-items-center gap-2"
+          >
+
+            <i class="bi bi-credit-card heading-icon"></i>
+
+            Online Transfer
+
+          </h2>
+
+
+          <!-- Bank Details -->
+
+          <div class="bank-details">
+
+            <h3>
+              Bank Details
+            </h3>
+
+
+            <!-- Account Name -->
+
+            <div class="bank-row">
+
+              <span class="bank-label">
+                Account Name
+              </span>
+
+              <span class="bank-value">
+                GURU VED VASHISHT CHARITABLE TRUST
+              </span>
+
+            </div>
+
+
+            <!-- Account Number -->
+
+            <div class="bank-row">
+
+              <span class="bank-label">
+                Account Number
+              </span>
+
+              <span class="bank-value account-number">
+                50100857862296
+              </span>
+
+            </div>
+
+
+            <!-- Bank -->
+
+            <div class="bank-row">
+
+              <span class="bank-label">
+                Bank Name
+              </span>
+
+              <span class="bank-value">
+                HDFC BANK LTD
+              </span>
+
+            </div>
+
+
+            <!-- IFSC -->
+
+            <div class="bank-row">
+
+              <span class="bank-label">
+                IFSC Code
+              </span>
+
+              <span class="bank-value ifsc">
+                HDFC0001566
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <!-- Tax Exemption -->
+
+          <div class="text-center mt-4">
+
+            <span class="tax-badge">
+
+              <i class="bi bi-check-circle-fill"></i>
+
+              Tax Exemption Available
+
+            </span>
+
+          </div>
+
+
+          <!-- Transfer Confirmation -->
+
+          <button
+            type="button"
+            class="transfer-btn"
+            onclick="showTransferMessage()"
+          >
+
+            <i class="bi bi-check2-circle me-2"></i>
+
+            I have made a transfer
+
+          </button>
+
+
+          <!-- Confirmation -->
+
+          <div
+            id="transferMessage"
+            class="alert alert-success mt-3 d-none"
+          >
+
+            <i class="bi bi-check-circle-fill me-2"></i>
+
+            Thank you for supporting Guru Ved Vashisht
+            Charitable Trust.
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- =================================================
+           IMPACT DETAILS
+      ================================================== -->
+
+      <div class="col-lg-6">
+
+        <div class="impact-section">
+
+          <h2 class="impact-heading">
+            How Your Donation Helps
+          </h2>
+
+
+          <!-- ₹500 -->
+
+          <div class="impact-card">
+
+            <div class="impact-amount">
+              ₹500
+            </div>
+
+            <p class="impact-text">
+              Provides notebooks, pencils, and basic
+              stationery for 5 needy children.
+            </p>
+
+          </div>
+
+
+          <!-- ₹1000 -->
+
+          <div class="impact-card">
+
+            <div class="impact-amount">
+              ₹1,000
+            </div>
+
+            <p class="impact-text">
+              Supplies ration kits (rice, dal, oil)
+              to one family for 10–15 days.
+            </p>
+
+          </div>
+
+
+          <!-- ₹2500 -->
+
+          <div class="impact-card">
+
+            <div class="impact-amount">
+              ₹2,500
+            </div>
+
+            <p class="impact-text">
+              Supports a basic health check-up camp
+              for 20–25 people.
+            </p>
+
+          </div>
+
+
+          <!-- ₹10000 -->
+
+          <div class="impact-card">
+
+            <div class="impact-amount">
+              ₹10,000
+            </div>
+
+            <p class="impact-text">
+              Covers one child's school expenses
+              (books, uniform, fees support) for one year.
+            </p>
+
+          </div>
+
+
+          <!-- Security -->
+
+          <div class="security-box">
+
+            <i
+              class="bi bi-shield-check security-icon"
+            ></i>
+
+            <div>
+
+              <h4>
+                Secure & Transparent
+              </h4>
+
+              <p>
+                We publish annual audited financial
+                reports. Every penny is accounted for
+                and used strictly for our charitable
+                objectives.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
+<footer class="site-footer">
+
+  <div class="container">
+
+    <div class="row g-5">
+
+
+      <!-- Brand -->
+
+      <div class="col-md-6 col-lg-3">
+
+        <div class="footer-brand">
+
+          <div class="footer-logo">
+
+            <img
+              src="./assets/images/logo.png"
+              alt="Guru Ved Vashisht Charitable Trust Logo"
+            >
+
+          </div>
+
+          <span class="footer-brand-name">
+            Guru Ved Vashisht
+          </span>
+
+        </div>
+
+        <p class="footer-description">
+          Compassion in action, creating hope and change
+          since 2025.
+        </p>
+
+      </div>
+
+
+      <!-- Quick Links -->
+
+      <div class="col-md-6 col-lg-3">
+
+        <h3 class="footer-title">
+          Quick Links
+        </h3>
+
+        <ul class="footer-links">
+
+          <li>
+            <a href="about.html">
+              <span class="footer-dot"></span>
+              About Us
+            </a>
+          </li>
+
+          <li>
+            <a href="programs.html">
+              <span class="footer-dot"></span>
+              Our Programs
+            </a>
+          </li>
+
+          <li>
+            <a href="gallery.html">
+              <span class="footer-dot"></span>
+              Gallery
+            </a>
+          </li>
+
+          <li>
+            <a href="contact.html">
+              <span class="footer-dot"></span>
+              Contact
+            </a>
+          </li>
+
+          <li>
+            <a href="donate.html">
+              <span class="footer-dot"></span>
+              Donate
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <!-- Contact -->
+
+      <div class="col-md-6 col-lg-3">
+
+        <h3 class="footer-title">
+          Contact Us
+        </h3>
+
+        <ul class="contact-list">
+
+          <li>
+
+            <i class="bi bi-geo-alt-fill"></i>
+
+            <span>
+              340-E, 2nd Floor, Chhajjupur,
+              East Babarpur, Shahdara,
+              <br>
+              Delhi - 110032
+            </span>
+
+          </li>
+
+          <li>
+
+            <i class="bi bi-telephone-fill"></i>
+
+            <span>
+              +91 9810213620
+            </span>
+
+          </li>
+
+          <li>
+
+            <i class="bi bi-envelope-fill"></i>
+
+            <span>
+              gvvct25@gmail.com
+            </span>
+
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <!-- Newsletter -->
+
+      <div class="col-md-6 col-lg-3">
+
+        <h3 class="footer-title">
+          Newsletter
+        </h3>
+
+        <p class="newsletter-text">
+          Stay updated with our latest initiatives.
+        </p>
+
+        <form
+          class="newsletter-form"
+          onsubmit="subscribeNewsletter(event)"
+        >
+
+          <input
+            type="email"
+            class="newsletter-input"
+            placeholder="Your email"
+            required
+          >
+
+          <button
+            type="submit"
+            class="newsletter-button"
+          >
+            Join
+          </button>
+
+        </form>
+
+
+        <!-- Social -->
+
+        <div class="social-links">
+
+          <a
+            href="#"
+            class="social-link"
+            aria-label="Facebook"
+          >
+            <i class="bi bi-facebook"></i>
+          </a>
+
+          <a
+            href="#"
+            class="social-link"
+            aria-label="Twitter"
+          >
+            <i class="bi bi-twitter-x"></i>
+          </a>
+
+          <a
+            href="#"
+            class="social-link"
+            aria-label="Instagram"
+          >
+            <i class="bi bi-instagram"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- Copyright -->
+
+    <div class="footer-bottom">
+
+      <p class="mb-0">
+
+        &copy;
+        <span id="currentYear"></span>
+        Guru Ved Vashisht Charitable Trust.
+        All rights reserved.
+
+      </p>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- =====================================================
+     BOOTSTRAP JS
+====================================================== -->
+
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script>
+
+  /* ==============================================
+     Navbar Scroll Effect
+  ============================================== */
+
+  const navbar =
+    document.getElementById("mainNavbar");
+
+  window.addEventListener("scroll", function () {
+
+    if (window.scrollY > 20) {
+
+      navbar.classList.add("scrolled");
+
+    } else {
+
+      navbar.classList.remove("scrolled");
+
+    }
+
+  });
+
+
+  /* ==============================================
+     Current Year
+  ============================================== */
+
+  document.getElementById("currentYear").textContent =
+    new Date().getFullYear();
+
+
+  /* ==============================================
+     Transfer Confirmation
+  ============================================== */
+
+  function showTransferMessage() {
+
+    const message =
+      document.getElementById("transferMessage");
+
+    message.classList.remove("d-none");
+
+  }
+
+
+  /* ==============================================
+     Newsletter
+  ============================================== */
+
+  function subscribeNewsletter(event) {
+
+    event.preventDefault();
+
+    const input =
+      event.target.querySelector("input");
+
+    const email = input.value;
+
+    alert(
+      "Thank you for subscribing!\n\nEmail: " + email
+    );
+
+    input.value = "";
+
+  }
+
+</script>
+
+
+</body>
+
+</html>
